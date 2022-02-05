@@ -39,7 +39,9 @@ class Game{
        
         }
     play(){
+        
                 form.hide();
+
                 Player.getPlayerInfo();
                 player.getPlayerAtEnd();
                  image(back_img, 0, 0, 1000, 800);
@@ -133,7 +135,7 @@ class Game{
                       if(obstacleGroup.isTouching(players)){
                        //write a code to assign the value of gameState to End
                        gameState = 2
-                       this.end()
+                       this.gameOver()
                       }
                   }
                 }
@@ -176,7 +178,7 @@ class Game{
             obstacle.scale = 0.15;
             obstacleGroup.add(obstacle);
 
-            x = 0
+            x = random(30,1200)
             var obstacle = createSprite(x, y);
             obstacle.addImage("obstacle", obstacleImage);
             obstacle.velocityY = 4;
